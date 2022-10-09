@@ -30,7 +30,7 @@ In any other condition, re-write your own token function.
 morgan.token("res-body",morgan_res_body.tokenFunction);		//register the token
 //morgan.token("res-body",(req, res)=>{...});		//or self-defined token function
 
-var morgan_logger = morgan( '... :res-body ...', ... );	//use the token
+var morgan_logger = morgan( '... :req-body :res-body ...', ... );	//use the token
 app.use(morgan_logger);		//add morgan middleware
 
 /*
@@ -47,5 +47,17 @@ create a middleware function for express
 
 */
 app.use(morgan_res_body.createMiddleware());	//add middleware for res-body
+
+
+/*
+More, how about the request body, the ":req-body"?
+
+just copy the following code and change it as you like.
+*/
+morgan.token("req-body", (req, res) => {
+	if (req.body && res.statusCode < 400) {
+		return "\nReq-body: " + JSON.stringify(req.body);
+	}
+});
 
 ```
