@@ -1,0 +1,24 @@
+{
+  "name": "morgan-res-body",
+  "version": "1.0.0",
+  "description": "A simple morgan plugin for response body",
+  "main": "morgan-res-body.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "morgan",
+    "response",
+    "body"
+  ],
+  "author": "fwg",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adf0001/morgan-res-body.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adf0001/morgan-res-body/issues"
+  },
+  "homepage": "https://github.com/adf0001/morgan-res-body#readme"
+}
