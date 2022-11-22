@@ -17,8 +17,8 @@ module.exports = {
 
 		middleware(null, mimicRes, () => { });
 
-		mimicRes.write(Buffer.from("writing, "));
-		mimicRes.end(Buffer.from("ending"));
+		mimicRes.write("writing, ");
+		mimicRes.end("ending");
 
 		var rsl = morgan_res_body.tokenFunction(null, mimicRes);
 		console.log(rsl);

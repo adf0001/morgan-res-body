@@ -1,6 +1,6 @@
 {
   "name": "morgan-res-body",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple morgan plugin for response body",
   "main": "morgan-res-body.js",
   "scripts": {

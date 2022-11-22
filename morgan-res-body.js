@@ -28,7 +28,7 @@ function createMiddleware(options) {
 			res.write = function () {
 				if (arguments[0]?.length > 0) {
 					if (!res[bufferName]) res[bufferName] = [];
-					res[bufferName].push(arguments[0]);
+					res[bufferName].push(Buffer.from(arguments[0]));
 				}
 				return oldWrite.apply(res, arguments);
 			};
@@ -36,7 +36,7 @@ function createMiddleware(options) {
 			res.end = function () {
 				if (arguments[0]?.length > 0) {
 					if (!res[bufferName]) res[bufferName] = [];
-					res[bufferName].push(arguments[0]);
+					res[bufferName].push(Buffer.from(arguments[0]));
 				}
 				return oldEnd.apply(res, arguments);
 			};
